@@ -1,26 +1,11 @@
 # ember-cli-mq4-hover-shim
 
-This README outlines the details of collaborating on this Ember addon.
+This is an Ember addon that ports [mq4-hover-shim](http://github.com/twbs/mq4-hover-shim) to automatically add class `hover` to the app layout's `html` tag when the app is initialized in browsers running on devices that properly support hover capabilities with their primary cursors.
+
+It also integrates that shim's CSS preprocessor to convert instances of the hover media query into selectors based on that `html` tag class so browsers that don't support the hover media query can fall back to using those selectors.
+
+This addon supports [FastBoot]() by checking for browser global variables before attempting to use them to determine contextual hover support. If any of those required global variables are unavailable (such as when the app is initialized in Node), this addon's initializer will trigger a console warning to that effect.
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-cli-mq4-hover-shim`
-* `npm install`
-
-## Running
-
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+Run `ember install ember-cli-mq4-hover-shim` within any Ember 2.0+ repository to install this addon.
